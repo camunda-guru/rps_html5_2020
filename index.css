@@ -1,0 +1,56 @@
+.topnav
+{
+    width:80%;
+    background-color: black;
+    height:25px;
+    margin-left: 10%;
+   
+}
+.topnav a
+{
+    display: inline;
+    text-decoration: none;
+    font-size: x-small;
+    color: white;
+    margin-left: 5%; 
+    
+}
+.topnav ul
+{
+    display: inline;
+    margin-left: 5%;
+    
+}
+
+.topnav ul li
+{
+   
+    display: inline;   
+    font-size: x-small;   
+    color:white;
+
+
+}
+
+.topnav ul li a
+{
+    text-decoration: none;
+    color: white;
+     margin-left: 1%;
+}
+
+.logo
+{
+    width:80%; 
+    height:75px;
+    margin-left: 10%;
+    background-color: dodgerblue;
+     margin-top: 0%;
+}
+
+.logo img
+{
+    width:35px;
+    height: 35px;
+    padding:3%;
+}
