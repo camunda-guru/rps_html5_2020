@@ -6,6 +6,8 @@ window.onload=FindLocation;
 
 function FindLocation()
 {
+	
+	
   if(navigator.geolocation) {
       console.log("Geo API supported");
       navigator.geolocation.getCurrentPosition(success,failure);
@@ -23,27 +25,28 @@ function FindLocation()
 
 
 function success(position) {
+	addressref=document.getElementById("address");
+	
     console.log(position.coords.latitude);
     console.log(position.coords.longitude);
     console.log(position.coords.altitude);
     console.log(position.coords.accuracy);
     console.log(position.coords.altitudeAccuracy);
     console.log(position.coords.speed);
-    var sectionref = document.getElementById("geoinfo");
-    sectionref.innerHTML =
-        "<p> Latitude=<mark>" + position.coords.latitude + "</mark></p><br/>" +
-        "<p> Longitude=<mark>" + position.coords.longitude + "</mark></p>";
 
-
-
+    var latlng = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+   
     googleloc = new google.maps.LatLng
     (position.coords.latitude,position.coords.longitude);
 
     //alert(googleloc);
     var mapoptions={
          center:googleloc,
-         zoom:12,
-        mapTypeId:google.maps.MapTypeId.ROADMAP,
+         zoom:15,
+        mapTypeId:google.maps.MapTypeId.SATELLITE,
+        navigationControlOptions: {
+            style: google.maps.NavigationControlStyle.SMALL
+        },
         mapTypeControl:true,
         mapTypeControlOptions:google.maps.MapTypeControlStyle.DEFAULT
 
