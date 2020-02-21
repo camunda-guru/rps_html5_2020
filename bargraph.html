@@ -1,0 +1,85 @@
+<!Doctype html>
+<html>
+<head>
+<style>
+canvas#mycanvas
+{
+position:absolute;
+border:4px solid red;
+margin:50px;
+
+}
+
+</style>
+<script type="text/javascript">
+window.onload=init;
+function init()
+{
+
+ var canvas = document.getElementById("mycanvas");
+
+var barcontext = canvas.getContext('2d');
+
+      barcontext.beginPath();
+      barcontext.moveTo(200, 400);
+      barcontext.lineTo(800, 400);
+      barcontext.moveTo(200, 400);
+      barcontext.lineTo(200, 100);
+      barcontext.lineWidth="5";
+      barcontext.strokeStyle="navy";
+      barcontext.closePath();
+      barcontext.stroke();
+
+      array = new Array(56,75,65,45,95,45,80);
+      k=0;
+      maxbarh=400;
+ 	barcontext.font = 'italic 40pt Calibri';
+     for(i=220;i<800;i=i+70)
+     {
+      barcontext.beginPath(); 
+      barcontext.rect(i,(maxbarh-array[k]),50,array[k]);
+      if(array[k]>60) 
+        barcontext.fillStyle="green";
+      else
+        barcontext.fillStyle="red";
+      barcontext.fill();
+      barcontext.lineWidth="7"
+      barcontext.strokeStyle='black';
+      barcontext.fillText(array[k], i,(maxbarh-array[k]));
+      barcontext.closePath();
+      barcontext.stroke();
+      k=k+1;
+      if(k==7)
+         break;
+      }
+
+
+barcontext.beginPath(); 
+barcontext.moveTo(250,400);  
+//barcontext.rotate(Math.PI/2);
+barcontext.fillText("Trainees", 350, 450);
+
+ barcontext.closePath();
+barcontext.stroke(); 
+
+barcontext.beginPath(); 
+//barcontext.moveTo(200,400);
+barcontext.rotate(Math.PI/2);
+
+barcontext.fillText("Score", 250,-100);
+
+ barcontext.closePath();
+barcontext.stroke(); 
+
+
+
+}
+
+</script>
+</head>
+<body >
+<canvas id="mycanvas" width="1000" height="500"></canvas>
+
+</body>
+
+</html>

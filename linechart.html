@@ -1,0 +1,82 @@
+<!Doctype html>
+<html>
+<head>
+<style>
+canvas#mycanvas
+{
+position:absolute;
+border:4px solid red;
+margin:50px;
+
+}
+
+
+</style>
+<script type="text/javascript">
+window.onload=init;
+function init()
+{
+
+ var canvas = document.getElementById("mycanvas");
+
+var linecontext = canvas.getContext('2d');
+
+    linecontext.beginPath();
+    linecontext.moveTo(200, 400);
+    linecontext.lineTo(800, 400);
+    linecontext.moveTo(200, 400);
+    linecontext.lineTo(200, 100);
+    linecontext.lineWidth="5";
+    linecontext.strokeStyle="navy";
+    linecontext.closePath();
+    linecontext.stroke();
+
+      array = new Array(96,75,65,45,95,45,80);
+      k=0;
+      maxbarh=400;
+    linecontext.font = 'italic 40pt Calibri';
+    x=200;
+    y=400;
+    startvalue=400;
+    for(i=0;i<array.length;i++) {
+        linecontext.beginPath();
+        linecontext.moveTo(x, y);
+        linecontext.lineTo(x+45, startvalue-array[i]);
+        linecontext.lineWidth = "5";
+        linecontext.strokeStyle = "green";
+        //linecontext.fillText(x+45, startvalue-array[i],array[i]);
+        linecontext.stroke();
+        linecontext.closePath();
+        x=x+45;
+        y=startvalue-array[i];
+    }
+
+
+    linecontext.beginPath();
+    linecontext.moveTo(250,400);
+//barcontext.rotate(Math.PI/2);
+    linecontext.fillText("Trainees", 350, 450);
+
+    linecontext.closePath();
+    linecontext.stroke();
+    linecontext.beginPath();
+//barcontext.moveTo(200,400);
+    linecontext.rotate(Math.PI/2);
+
+    linecontext.fillText("Score", 250,-100);
+
+    linecontext.closePath();
+    linecontext.stroke();
+
+
+
+}
+
+</script>
+</head>
+<body >
+<canvas id="mycanvas" width="1000" height="500"></canvas>
+
+</body>
+
+</html>
