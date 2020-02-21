@@ -1,24 +1,54 @@
+@font-face {
+    font-family: 'citi-font';
+    font-style: normal;
+    font-weight: 400;
+    src: local('citi-font'), url(http://fonts.gstatic.com/s/tangerine/v7/HGfsyCL5WASpHOFnouG-RFtXRa8TVwTICgirnJhmVJw.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+
+
+.section
+{
+    width:100%;
+   
+}
+.section header
+{
+    width:68%;
+    margin-left: 8%;
+    float:left;
+  
+}
+.section .rightaside
+{
+    margin-left: 80%;
+    padding-top: 7%;
+  
+}
+
+
 .topnav
 {
-    width:80%;
+    width:90%;
     background-color: black;
     height:25px;
-    margin-left: 10%;
+    margin-left: 13%;
    
 }
 .topnav a
 {
     display: inline;
     text-decoration: none;
-    font-size: x-small;
+    font-size: small;
     color: white;
-    margin-left: 5%; 
+    margin-left: 2%; 
     
 }
 .topnav ul
 {
     display: inline;
-    margin-left: 5%;
+
     
 }
 
@@ -26,7 +56,7 @@
 {
    
     display: inline;   
-    font-size: x-small;   
+    font-size: small;
     color:white;
 
 
@@ -41,16 +71,146 @@
 
 .logo
 {
-    width:80%; 
-    height:75px;
-    margin-left: 10%;
+    width:90%; 
+    height:125px;
+    margin-left: 13%;
     background-color: dodgerblue;
      margin-top: 0%;
 }
 
 .logo img
 {
-    width:35px;
-    height: 35px;
+    width:100px;
+    height: 100px;
     padding:3%;
+    margin-left: 3%;
 }
+.bottomnav
+{
+    width:90%;
+    background-color: blue;
+    height:25px;
+    margin-left: 13%;
+    margin-top: -1%;
+  
+   
+}
+
+.bottomnav ul
+{
+    display: inline;
+    margin-left: 5%;
+    
+}
+
+.bottomnav ul li
+{
+   
+    display: inline;   
+    font-size: small;
+    color:white;
+    margin-right: 1%;
+
+
+}
+
+.bottomnav ul li a
+{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+     
+}
+
+.rightaside button
+{
+    display: block;
+    width:50%;
+    background-color: dodgerblue;
+    color:white;
+    font-weight: bold;
+
+}
+#middle
+{
+    width:100%;
+
+}
+
+
+
+
+.quickaccess
+{
+    background-color: chocolate;
+    width:25%;
+    margin-left: 2%;
+    height:200px;
+    border-radius: 5% 5% 0% 0%;
+    float:left;
+}
+
+.quickaccess h6
+{
+   padding:3%;
+    text-align: center;
+    color: white;
+
+}
+
+.quickaccess button
+{
+    width:80%;
+    display: block;
+    font-size: small;
+    font-weight: bold;
+    margin-left: 8%;
+    margin-bottom: 3%;
+    
+}
+.quickaccess a
+{
+    display: inline;
+    font-size: x-small;
+    color: white;
+    font-weight: bold;
+   
+    text-decoration: none;
+}
+.quickaccess p
+{
+    margin-left: 8%;
+}
+.color
+{
+    color: white;
+}
+
+#newlaunch
+{
+    width:45%;
+    height:300px;
+    margin-left: 30%;
+
+
+}
+
+#newlaunch p
+{
+    column-count: 3;
+    column-gap: 25px;
+    column-rule: 6px dotted red;
+    text-align: justify;
+    font-family: citi-font;
+}
+#newlaunch p:first-letter
+{
+    font-size: xx-large;
+    color: orangered;
+}
+#newlaunch p:first-line
+{
+    font-size: medium;
+    font-family: "Lucida Console";
+}
+
