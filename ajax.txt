@@ -1,42 +1,34 @@
-var xhr=null;
-	            try
-	            {
-	            xhr= new XMLHttpRequest(); //chrome,safari,firefox
-	            }
-	            catch(err)
-	            {
-	          	  
-	                try {   
-	              	  //  first attempt for Internet Explorer
-	                    xhr = new ActiveXObject("MSXML2.XMLHttp.6.0");
-	                     }
-	                     catch(err)
-	                     {
-	                  	    alert(err);
-	                     }
+window.addEventListener('load',function() {
+    //ajax call
+    var xhr = null;
+    try {
+        xhr = new XMLHttpRequest(); //chrome,safari,firefox
+    } catch (err) {
 
-	          	  
-	            }
-	    
-	    
-	    
-	    //event handling
-	    xhr.onreadystatechange = function() {
-	        if (xhr.readyState == 4) {
-	            var data = xhr.responseText;
-	            //alert(data);
-	           seatRef=document.querySelector("#seatNo");
-	            jsObj=JSON.parse(data);
-	            for(key in jsObj)
-	            	{
-			            seatElem=document.createElement("option");
-			            text=document.createTextNode(jsObj[key]);
-			            seatElem.appendChild(text);
-			            seatRef.appendChild(seatElem);
-	            	}
-	        }
-	    }
-	    //request mapping path in controller
-	    xhr.open('POST', 'seatbyid', true);
-	    xhr.setRequestHeader("Content-type", "application/json");
-	    xhr.send(eventarr[0]); 	
+        try {
+            //  first attempt for Internet Explorer
+            xhr = new ActiveXObject("MSXML2.XMLHttp.6.0");
+        } catch (err) {
+            alert(err);
+        }
+
+
+    }
+
+    //event handling
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4) {
+            console.log(xhr.responseText);
+
+        }
+    }
+    //request mapping path
+    xhr.open('GET', 'https://restcountries.eu/rest/v2/all', false);
+    xhr.send();
+
+
+});
+
+
+
+
